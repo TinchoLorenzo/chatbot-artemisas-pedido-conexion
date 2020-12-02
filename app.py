@@ -16,8 +16,6 @@ def home():
     message = '{ "url": https://botdisenio.herokuapp.com/webhooks/my_connector/webhook/ }'
     channel.basic_publish(exchange='topic_logs', routing_key=routing_key, body=message)
     #connection.close()
-    year = int(request.args['year'])
-    try:
-        return series.loc[year]
-    except KeyError:
-        return f'Invalid input ({series.index.min()} - {series.index.max()})'
+    #year = int(request.args['year'])
+    return "Hello world"
+    
