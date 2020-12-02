@@ -2,6 +2,7 @@ import flask
 from flask import request
 import pandas as pd
 from datetime import datetime as dt
+import pika 
 
 data = pd.read_csv('data.csv', names=['s', 'e', 'm']).set_index('m')
 
