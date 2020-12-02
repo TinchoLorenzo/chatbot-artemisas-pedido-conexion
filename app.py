@@ -14,7 +14,7 @@ def home():
     #channel.exchange_declare(exchange='topic_logs', exchange_type='topic')
 
     routing_key = "Chatbot.PedidoConeccion"
-    message = '{ "url": https://botdisenio.herokuapp.com/webhooks/my_connector/webhook/ }'
+    message = '{"url": "https://botdisenio.herokuapp.com/webhooks/my_connector/webhook/" }'
     channel.basic_publish(exchange='topic_logs', routing_key=routing_key, body=message)
     connection.close()
     #year = int(request.args['year'])
