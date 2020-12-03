@@ -14,9 +14,9 @@ def home():
     channel = connection.channel()
     #channel.exchange_declare(exchange='topic_logs', exchange_type='topic')
     url = json.loads(request.json)['url']
+    message=json.dumps({'url': url})
     routing_key = "Chatbot.PedidoConeccion"
-    message = '{"url": {0} }'.format(url)
+    #message = "{'url': {0} }".format(url)
     channel.basic_publish(exchange='topic_logs', routing_key=routing_key, body=message)
     connection.close()
     return "Hello world"
-    
